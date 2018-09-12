@@ -1,0 +1,15 @@
+{
+  "keyStoreOptions": {
+    "kdf": "pbkdf2",
+    "cipher": "aes-128-ctr",
+    "kdfparams": {
+      "c": 262144,
+      "dklen": 32,
+      "prf": "hmac-sha256"
+    }
+  },
+  "infura": {
+    "api_key": "5e700452a94b430a9da21d488d337965"
+  },
+  "token": "asd"
+}

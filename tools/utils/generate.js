@@ -21,3 +21,4 @@ console.log("标准公钥地址:" + publicKey.toString('hex'))
 console.log("压缩公钥地址:" + publicKey.toString('hex'))
 console.log("公钥hash:" + pubkeyHash.toString('hex'))
 console.log("地址：" + cs.encode(pubkeyHash, 0x0))
+// 2rf8PvzW77EmdLEooqujY5hS7G7Nw9wmAqsAoJN5oE7W

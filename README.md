@@ -10,11 +10,11 @@
 
 ## private
 * seed hdkey
-* bip32 bip44 bip49 bip84 bip141
-* purpose coin 
+* bip32 bip39 bip44 bip49 bip84 bip141
+* m / purpose' / coin_type' / account' / change / address_index
 
 ##btc
-* 助记词(多语言助记词) 私钥(base58) 标准公钥 压缩公钥 公钥hash
+* 助记词(多语言助记词) 私钥(WIF) 标准公钥 压缩公钥 公钥hash
 * 校验和Base58编码
 * 多重签名地址即隔离见证地址(3开头)
 > 1. 更好的安全性。
@@ -62,3 +62,6 @@
 * [walletgenerator.net](https://walletgenerator.net)
 * [bitcore](https://bitcoin.org/en/developer-reference)
 * [mnemonic-bip39](https://iancoleman.io/bip39/)
+
+##verify
+* segwit address

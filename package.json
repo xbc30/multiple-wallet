@@ -5,11 +5,18 @@
   "private": true,
   "dependencies": {
     "bigi": "^1.4.2",
+    "bip39": "^2.5.0",
+    "bs58check": "^2.1.2",
     "coinstring": "^2.3.0",
     "ecurve": "^1.0.6",
     "egg": "^2.2.1",
     "egg-scripts": "^2.5.0",
-    "randombytes": "^2.0.6"
+    "eip55": "^1.0.3",
+    "ethereumjs-util": "^5.2.0",
+    "hdkey": "^1.1.0",
+    "randombytes": "^2.0.6",
+    "scrypt-js": "^2.0.3",
+    "sjcl": "^1.0.7"
   },
   "devDependencies": {
     "autod": "^3.0.1",

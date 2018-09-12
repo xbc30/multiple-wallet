@@ -15,7 +15,7 @@ function generateWallet() {
     let publicKey = Buffer.concat([Buffer.from([0x04]), x, y]);
     let sha = crypto.createHash('sha256').update(publicKey).digest();
     let pubkeyHash = crypto.createHash('rmd160').update(sha).digest();
-    let pri = cs.encode(Buffer.concat([privateKey, Buffer.from([0])]), 0x80);
+    let pri = cs.encode(privateKey, 0x80);
     let add = cs.encode(pubkeyHash, 0x0);
     return {
       privateKey: pri,
