@@ -16,14 +16,15 @@ a.generateMnemonic = () => {
 };
 
 a.mnemonicToBtcPrivate = (mnemonic) => {
-    let seed = bip39.mnemonicToSeed(mnemonic);
+    let seed = bip39.mnemonicToSeedHex(mnemonic);
+    console.log(seed);
     let hdWallet = hdkey.fromMasterSeed(seed);
     let key = hdWallet.derivePath("m/44'/0'/0'/0/0");
     return key._hdkey._privateKey.toString('hex');
 };
 
 a.mnemonicToBtcWIFPrivate = (mnemonic) => {
-    let seed = bip39.mnemonicToSeed(mnemonic);
+    let seed = bip39.mnemonicToSeedHex(mnemonic);
     let hdWallet = hdkey.fromMasterSeed(seed);
     let key = hdWallet.derivePath("m/44'/0'/0'/0/0");
     return cs.encode(key._hdkey._privateKey, 0x80);
@@ -34,13 +35,6 @@ a.mnemonicToEthPrivate = (mnemonic) => {
     let hdWallet = hdkey.fromMasterSeed(seed);
     let key = hdWallet.derivePath("m/44'/60'/0'/0/0");
     return key._hdkey._privateKey.toString('hex');
-};
-
-a.mnemonicToEthAddress = (mnemonic) => {
-    let seed = bip39.mnemonicToSeed(mnemonic);
-    let hdWallet = hdkey.fromMasterSeed(seed);
-    let key = hdWallet.derivePath("m/44'/60'/0'/0/0");
-    return eip55.encode("0x" + (util.pubToAddress(key._hdkey._publicKey, true)).toString('hex'));
 };
 
 a.privateKeyToBtcAddress = (privateKey) => {
@@ -54,6 +48,13 @@ a.privateKeyToBtcAddress = (privateKey) => {
     let pubkeyHash = crypto.createHash('rmd160').update(sha).digest()
     return cs.encode(pubkeyHash, 0x0)
 }
+
+a.mnemonicToEthAddress = (mnemonic) => {
+    let seed = bip39.mnemonicToSeed(mnemonic);
+    let hdWallet = hdkey.fromMasterSeed(seed);
+    let key = hdWallet.derivePath("m/44'/60'/0'/0/0");
+    return eip55.encode("0x" + (util.pubToAddress(key._hdkey._publicKey, true)).toString('hex'));
+};
 
 let b = 'until spend pluck flat top shell they vacant erode van sheriff wife';
 

@@ -1,17 +1,7 @@
-##UTXO  
-* 未被耗费的事务输出
-* btc 交易标准
-
-##mnemonic export path(助记词导出路径)
-* 0 -> BTC
-* 2 -> LTC
-* 60 -> ETH
-* 133 -> ZEC
-
-## private
-* seed hdkey
+#multiple-wallet
+>整理了多链钱包开发中所使用的工具网站，希望对开发者有所帮助
+## [bip](https://github.com/bitcoin/bips)
 * bip32 bip39 bip44 bip49 bip84 bip141
-* m / purpose' / coin_type' / account' / change / address_index
 
 ##btc
 * 助记词(多语言助记词) 私钥(WIF) 标准公钥 压缩公钥 公钥hash
@@ -21,47 +11,86 @@
 > 2. 可以增大区块容量。
 > 3. 检查交易更快速。  
 > 4. 交易手续费会比普通地址类型 (以 1 开头的地址) 更便宜
-* 普通地址(1开头)
-* [api](https://www.blockcypher.com/dev/bitcoin/)
-* 暂未找到btc网页钱包(可导入私钥)
-* ex: 
-> privateKey: 5HsNUNg8MxNowjhDsVm7WPqLP436Y2hp2mKKs926m6HRmQALGr5
-> address: 1J8swJEZKyijESaqMk6YcoYjXmgREQGViB
-
-##eth
-* 助记词 私钥 公钥
-* [api](https://infura.io/docs/api)
-* [网页钱包](myetherwallet.com)
 
 ##usdt
 * Omni Layer
-* [api](https://api.omniexplorer.info/)
 
 ##zcash
-* taddr(btc rpc) zaddr(zcash rpc)   
+> taddr(btc rpc) zaddr(zcash rpc)   
   taddr - 透明资金的地址（就像比特币地址，存储在UTXO中的值）  
   zaddr - 私人资金的地址（存储在称为笔记的对象中的值）
-* api(btc api)
-* [dev doc](https://zcash.readthedocs.io/en/latest/index.html)
-* ex:
-> privateKey: 5J7jtvdYjPG8LWtuKP2Ntgap71kxFjG6sYkBDWtdyfLjdFXwjrz
-> address: t1VvDzHgnnz6ZARL1GsB3fNpC4npeqEpcNK
-  
-##litecoin
-* ex: 
-> privateKey: 6uHjHDbcEFzWEvVpw3W8yyJuSTjrGScVs2aZFhywyK94BADaeJh
-> address: LNzE6FhtdQSTt64K13v5zVHEycKs3chwDc
 
 ##imtoken
 * [闪兑](https://developer.kyber.network/docs/Start)
+* [exchange](https://changelly.com/developers)
 * [tokenlon](https://docs.token.im/tokenlon-sdk/en/) (0x.js) WETH
 * [Dapp api](https://docs.token.im/dapp-sdk/en/)
 
 ##tool
 * [chain.so](https://chain.so)
 * [walletgenerator.net](https://walletgenerator.net)
-* [bitcore](https://bitcoin.org/en/developer-reference)
-* [mnemonic-bip39](https://iancoleman.io/bip39/)
+* [bitcore-reference](https://txTest.org/en/developer-reference)
+* [bitcore-guide](https://txTest.org/en/developer-guide)
+* [bip32](http://bip32.org/)
+* [bip39](https://iancoleman.io/bip39/)
+* [hdwallet](http://webhdwallet.github.io/)
 
 ##verify
-* segwit address
+* bip84 2-to-3 segwit
+* 回执脚本 redeemScript
+
+##node_gyp
+> npm config set python G:/python27/python.exe  
+> npm config set msvs_version 2015 --global
+
+##test
+curl https://api.blockcypher.com/v1/btc/main/txs/a3093da72c266370ba198a26e9ba0d5ec8800d9f4811fa61094f758b578b3eae
+curl https://api.blockcypher.com/v1/btc/main/addrs/176SrQoGGGVAHAXeeSKnJk8Fd9ApS542WA
+
+##token fee
+* fee = (in*148+34*out+10)* X satoshis / byte
+
+##token blockchain explorer
+* [Bitcoin](https://blockchain.info/)
+* [Bitcoin Testnet1](https://live.blockcypher.com/btc-testnet/)
+* [Bitcoin Testnet2](https://www.blocktrail.com/tBTC)
+* [Bitcoin Cash](https://explorer.bitcoin.com/bch)
+* [Ethereum](https://etherscan.io/)
+* [Ethereum Classic](https://gastracker.io/)
+* [Eos](https://eosmonitor.io/)
+* [Litecoin](https://live.blockcypher.com/ltc/)
+* [Zcash](https://explorer.zcha.in/)
+
+##token testnet faucet
+* [btc](https://coinfaucet.eu/en/btc-testnet/)
+* [bch](https://www.wormhole.cash/test/)
+* [eth ropsten](https://faucet.ropsten.be/)
+* [etc](https://testnet.epool.io/)
+* [eos](https://tools.cryptokylin.io/#/tools/create)
+* [ltc](http://testnet.litecointools.com/)
+* [zec](https://faucet.testnet.z.cash/)
+
+##token third-party dev api
+* [btc](https://www.blockcypher.com/dev/bitcoin/)
+* [bch]()
+* [eth](https://infura.io/docs/api)
+* [eos]()
+* [usdt](https://api.omniexplorer.info/)
+* [zec](https://zcash.readthedocs.io/en/latest/index.html)
+
+##token web wallet
+* [btc]()
+* [eth](https://myetherwallet.com/)
+* [eos]()
+
+##mnemonic derive path
+> m / purpose' / coin_type' / account' / change / address_index
+* btc: "m/44'/0'/0'/0/0"
+* btcSegwit: "m/49'/0'/0'/0/0"
+* btcTestnet: "m/44'/1'/0'/0/0"
+* btcTestnetSegwit: "m/49'/1'/0'/0/0"
+* bch: "m/44'/145'/0'/0/0"
+* eth: "m/44'/60'/0'/0/0"
+* etc: "m/44'/61'/0'/0/0"
+* ltc: "m/44'/2'/0'/0/0"
+* zec: "m/44'/133'/0'/0/0"
