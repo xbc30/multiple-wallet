@@ -36,8 +36,11 @@
 * [hdwallet](http://webhdwallet.github.io/)
 
 ## verify
-* bip84 2-to-3 segwit
+* 计算bytes
 * 回执脚本 redeemScript
+* for signature error(segwit zec)
+* eos(transfer vote create)
+* 闪兑
 
 ## node_gyp
 > npm config set python G:/python27/python.exe  
@@ -48,25 +51,34 @@ curl https://api.blockcypher.com/v1/btc/main/txs/a3093da72c266370ba198a26e9ba0d5
 curl https://api.blockcypher.com/v1/btc/main/addrs/176SrQoGGGVAHAXeeSKnJk8Fd9ApS542WA
 
 ## token fee
-* fee = (in*148+34*out+10)* X satoshis / byte
+* btc 
+> fee = (in*148+34*out+10)* X satoshis / byte
 
 ## token blockchain explorer
 * [Bitcoin](https://blockchain.info/)
 * [Bitcoin Testnet1](https://live.blockcypher.com/btc-testnet/)
 * [Bitcoin Testnet2](https://www.blocktrail.com/tBTC)
-* [Bitcoin Cash](https://explorer.bitcoin.com/bch)
+* [Usdt](https://omniexplorer.info/)
+* [Usdt Testnet](https://www.blocktrail.com/tBTC)
+* [Bitcoin Cash](https://www.blocktrail.com/BCC)
+* [Bitcoin Cash Testnet](https://www.blocktrail.com/tBCC)
 * [Ethereum](https://etherscan.io/)
+* [Ethereum Ropsten](https://ropsten.etherscan.io)
 * [Ethereum Classic](https://gastracker.io/)
+* [Ethereum Classic Morden](http://mordenexplorer.ethernode.io/home)
 * [Eos](https://eosmonitor.io/)
+* [Eos Testnet](https://jungle.bloks.io/)
 * [Litecoin](https://live.blockcypher.com/ltc/)
+* [Litecoin Testnet](http://explorer.litecointools.com/)
 * [Zcash](https://explorer.zcha.in/)
+* [Zcash Testnet](https://explorer.testnet.z.cash)
 
 ## token testnet faucet
 * [btc](https://coinfaucet.eu/en/btc-testnet/)
 * [bch](https://www.wormhole.cash/test/)
 * [eth ropsten](https://faucet.ropsten.be/)
 * [etc](https://testnet.epool.io/)
-* [eos](https://tools.cryptokylin.io/#/tools/create)
+* [eos](http://jungle.cryptolions.io/#faucet)
 * [ltc](http://testnet.litecointools.com/)
 * [zec](https://faucet.testnet.z.cash/)
 
@@ -81,7 +93,7 @@ curl https://api.blockcypher.com/v1/btc/main/addrs/176SrQoGGGVAHAXeeSKnJk8Fd9ApS
 ## token web wallet
 * [btc]()
 * [eth](https://myetherwallet.com/)
-* [eos]()
+* [etc](https://ethereumproject.github.io/etherwallet/)
 
 ## mnemonic derive path
 > m / purpose' / coin_type' / account' / change / address_index
