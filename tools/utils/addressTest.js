@@ -4,7 +4,7 @@ const bitcoin = require('bitcoinjs-lib');
 const networks = require('../utils/networks')
 const util = require('ethereumjs-util');
 
-const mnemonic = 'stable element chronic swift tell obvious hope display unique drum desert clarify';
+const mnemonic = address.generateMnemonic();
 const root = address.mnemonicToRoot(mnemonic);
 
 const btcNode = address.deriveNode(root, path.btc);
