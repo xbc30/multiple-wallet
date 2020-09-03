@@ -1,6 +1,10 @@
 # multiple-wallet
 
->整理了多链钱包开发中所使用的工具网站，希望对开发者有所帮助
+> :satisfied: Sorted out the tool websites used in the development of multi-chain wallets, hoping to help developers
+
+:warning: **Warning:**
+
+This implementation has been in the past for a long time, the related code may have changed, please pay attention
 
 ## [bips](https://github.com/bitcoin/bips)
 * bip32 bip39 bip44 bip49 bip84 bip141
@@ -8,24 +12,18 @@
 
 ## btc
 
-* 助记词(国际化助记词) 私钥(WIF) 标准公钥 压缩公钥 公钥hash
-* 校验和Base58编码
-* 多重签名地址即隔离见证地址(3开头)
+* Mnemonic (internationalized mnemonic) Private key (WIF) Standard public key Compressed public key Public key hash
+* Checksum Base58 encoding
+* Multi-signature address is Segregated Witness address (beginning with 3)
 
-> 1. 更好的安全性。
-> 2. 可以增大区块容量。
-> 3. 检查交易更快速。  
-> 4. 交易手续费会比普通地址类型 (以 1 开头的地址) 更便宜
+> 1. Better security.
+> 2. Block capacity can be increased.
+> 3. Check transactions faster.
+> 4. Transaction fees will be cheaper than ordinary address types (addresses starting with 1)
 
 ## usdt
 
 * Omni Layer
-
-## zcash
-
-> taddr(btc rpc) zaddr(zcash rpc)
-  taddr - 透明资金的地址（就像比特币地址，存储在UTXO中的值）  
-  zaddr - 私人资金的地址（存储在称为笔记的对象中的值）
 
 ## imtoken
 
@@ -43,14 +41,6 @@
 * [bip32](http://bip32.org/)
 * [bip39](https://iancoleman.io/bip39/)
 * [hdwallet](http://webhdwallet.github.io/)
-
-## verify
-
-* 计算bytes
-* 回执脚本 redeemScript
-* for signature error(segwit zec)
-* eos(transfer vote create)
-* 闪兑
 
 ## test
 
